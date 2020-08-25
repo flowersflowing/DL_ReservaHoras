@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de horas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Reserva de horas</h1>
+    <form class="form-register" onsubmit="return validar();">
+       <div class="contenedor-inputs">
+           <input type="text" id="rut" name="rut" placeholder="Rut (9.456.789-0)" class="inputcss">
+           <input type="text" id="nombres" name="nombres" placeholder="Nombres" class="inputcss">
+           <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" class="inputcss">
+           <input type="text" id="edad" name="edad" placeholder="Edad" class="inputcss">
+           <input type="text" id="correo" name="correo" placeholder="E-mail" class="inputcss">
+           <!-- Poner lista desplegable de especialidades -->
+           <input type="text" id="fecha" name="fecha" placeholder="Fecha (dd-mm-aaaa, ej. 28-03-1982)" class="inputcss">
+           <!-- Agregar lista desplegable de hora de atención -->
+       <input type="submit" value="Reservar" class="btn-enviar" onsubmit="return validar();">
+       </div>
+    </form>
+
+    <script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+</html>
