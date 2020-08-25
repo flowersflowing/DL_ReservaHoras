@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Reserva de horas</h1>
-    <form class="form-register" onsubmit="return validar();">
+    <form class="form-register">
        <div class="contenedor-inputs">
            <input type="text" id="rut" name="rut" placeholder="Rut (9.456.789-0)" class="inputcss">
            <input type="text" id="nombres" name="nombres" placeholder="Nombres" class="inputcss">
@@ -18,10 +18,10 @@
            <!-- Poner lista desplegable de especialidades -->
            <input type="text" id="fecha" name="fecha" placeholder="Fecha (dd-mm-aaaa, ej. 28-03-1982)" class="inputcss">
            <!-- Agregar lista desplegable de hora de atención -->
-       <input type="submit" value="Reservar" class="btn-enviar" onsubmit="return validar();">
+       <input type="button" value="Reservar" class="btn-enviar" onclick="validar();">
        </div>
     </form>
 
-    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
