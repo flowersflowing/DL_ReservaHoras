@@ -3,7 +3,17 @@ TO DO
 - Recoger los datos con get Element y almacenarlos en variables :)
 - Hacer una función que valide todos al mismo tiempo :)
 - Hacer las operaciones de cada validación por separado. :)
+    - Validar rut (formato) :)
+    - Validar nombres (sólo letras) :)
+    - Validar apellidos (sólo letras) :)
+    - Validar edad (que sólo tenga números) :)
+    - Validar mail (formato) :)
+    - Validar fecha (validar que sean números y en formato dd-mm-aaaa) :)
 - Llamar las funciones dentro de la función de validación :)
+- Entregar mensaje de vuelta :)
+- Darle forma al mensaje de vuelta con un innerHTML
+- Crear el campo de especialidad con lista desplegable
+- Crear el campo de hora con horas desplegables
 */
 
 //Almacenar los valores en variables
@@ -14,6 +24,8 @@ var apellidos = document.getElementById("apellidos");
 var edad = document.getElementById("edad");
 var correo = document.getElementById("correo");
 var fecha = document.getElementById("fecha");
+var especialidad; //ver especialidad
+var hora; //ver hora
 
 //Función de validación
 
@@ -31,10 +43,10 @@ function validar () {
     fecha = fecha.value;
     valFecha(fecha);
 
-    console.log(rut, nombres, apellidos, edad, correo, fecha);
+    document.write("<div><p>Estimado(a) " + nombres + " " + apellidos + ", su hora para " + especialidad + " ha sido reservada para el día " + fecha + " a las " + hora + ". Además, se le envió un mensaje a su correo " + correo + " con el detalle de su cita.</p>" + "<p>Gracias por preferirnos.</p></div>")
 };
 
-//VALIDACIONES
+//Validaciones
 
 function valRut (v) {
     if (v.length > 0 && /[0-9]{1,2}[.]{1}[0-9]{3}[.]{1}[0-9]{3}[-]{1}[0-9kK]{1}/.test(v)) {
@@ -77,7 +89,7 @@ function valCorreo (v) {
 };
 
 function valFecha (v) {
-    if (v.length > 0 && /[0-9]{2}[-]{1}[0-9]{2}[-]{1}[1900-2020]/.test(v)) { //ver cómo hago para que no pongan más de 31, 12 y que no pongan otras cifras en año.
+    if (v.length > 0 && /[0-3]{1}[0-9]{1}[-]{1}[0-1]{1}[0-9]{1}[-]{1}[1-2]{1}[0-9]{3}/.test(v)) {
         console.log(true);
     }
     
@@ -85,25 +97,3 @@ function valFecha (v) {
         alert("Debes ingresar una fecha válida");     
     }
 };
-
-
-
-
-
-/* Crear el campo de especialidad con lista desplegable
-Crear el campo de hora con horas desplegables
-
-- Validar rut (formato) 
-- Validar nombres (sólo letras)
-- Validar apellidos (sólo letras)
-- Validar edad (que sólo tenga números)
-- Validar mail (formato)
-- Validar fecha (validar que sean números y en formato dd-mm-aaaa)
-
-El botón reservar validará los datos ingresados y deberá desplegar:
-Estimado(a) [nombre y apellido del paciente], su hora para [especialidad] ha sido reservada para el día [fecha] a las [hora]. Además, se le envió un mensaje a su corre [email] con el detalle de su cita. 
-Gracias por preferirnos. 
-(todo centrado en un div que se sitúe dentro del html).
-
-Si alguno de los datos no son válidos
-*/
