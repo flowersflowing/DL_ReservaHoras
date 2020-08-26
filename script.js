@@ -21,9 +21,9 @@ function validar () {
     rut = rut.value;
     valRut(rut);
     nombres = nombres.value;
-    valNombres();
+    valNombres(nombres);
     apellidos = apellidos.value;
-    // valApellidos();
+    valNombres();
     edad = edad.value;
     // valEdad();
     correo = correo.value;
@@ -37,14 +37,22 @@ function validar () {
 //VALIDACIONES
 
 function valRut (v) {
-    if (v == null || v.length == 0 || /\D/.test(v)) { //agregar puntos y guiones a la validación
-        alert("Debes ingresar un RUT válido");
-    };
+    if (v.length > 0 && /[0-9]{1,2}[.]{1}[0-9]{3}[.]{1}[0-9]{3}[-]{1}[0-9kK]{1}/.test(v)) {
+        console.log(true);
+    }
+
+    else {
+        alert("Debes ingresar un RUT válido");        
+    }
 };
 
 function valNombres (v) {
-    if (v == null || v.length == 0 || / /.test(v)) {
-        
+    if (v.length > 0 && /[a-z]\s[a-z]/gim.test(v)) {
+        console.log(true);
+    }
+    
+    else {
+        alert("Debes ingresar nombre válido");     
     }
 };
 
