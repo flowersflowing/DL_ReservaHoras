@@ -1,9 +1,9 @@
 /*
 TO DO
 - Recoger los datos con get Element y almacenarlos en variables :)
-- Hacer una función que valide todos al mismo tiempo.
-- Hacer las operaciones de cada validación por separado.
-- Llamar las funciones dentro de la función de validación.
+- Hacer una función que valide todos al mismo tiempo :)
+- Hacer las operaciones de cada validación por separado. :)
+- Llamar las funciones dentro de la función de validación :)
 */
 
 //Almacenar los valores en variables
@@ -23,13 +23,13 @@ function validar () {
     nombres = nombres.value;
     valNombres(nombres);
     apellidos = apellidos.value;
-    valNombres();
+    valNombres(apellidos);
     edad = edad.value;
-    // valEdad();
+    valEdad(edad);
     correo = correo.value;
-    // valCorreo();
+    valCorreo(correo);
     fecha = fecha.value;
-    // valFecha();
+    valFecha(fecha);
 
     console.log(rut, nombres, apellidos, edad, correo, fecha);
 };
@@ -52,12 +52,45 @@ function valNombres (v) {
     }
     
     else {
-        alert("Debes ingresar nombre válido");     
+        alert("Debes ingresar nombres válido");     
     }
 };
 
-/* 
-Crear el campo de especialidad con lista desplegable
+function valEdad (v) {
+    if (v.length > 0 && /[\d]/.test(v)) {
+        console.log(true);
+    }
+    
+    else {
+        alert("Debes ingresar tu edad");     
+    }
+};
+
+function valCorreo (v) {
+    if (v.length > 0 && /[a-z0-9_-]{1,}[@]{1}[a-z0-9_-]{1,15}[.]{1}[a-z]{2}/i.test(v)) {
+        console.log(true);
+    }
+    
+    else {
+        alert("Debes ingresar tu correo con @ y punto, ej. hola@micorreo.ok");     
+    }
+};
+
+function valFecha (v) {
+    if (v.length > 0 && /[0-9]{2}[-]{1}[0-9]{2}[-]{1}[1900-2020]/.test(v)) { //ver cómo hago para que no pongan más de 31, 12 y que no pongan otras cifras en año.
+        console.log(true);
+    }
+    
+    else {
+        alert("Debes ingresar una fecha válida");     
+    }
+};
+
+
+
+
+
+/* Crear el campo de especialidad con lista desplegable
 Crear el campo de hora con horas desplegables
 
 - Validar rut (formato) 
