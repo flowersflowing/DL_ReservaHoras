@@ -19,20 +19,34 @@ var fecha = document.getElementById("fecha");
 
 function validar () {
     rut = rut.value;
+    valRut(rut);
     nombres = nombres.value;
+    valNombres();
     apellidos = apellidos.value;
+    // valApellidos();
     edad = edad.value;
+    // valEdad();
     correo = correo.value;
+    // valCorreo();
     fecha = fecha.value;
+    // valFecha();
 
     console.log(rut, nombres, apellidos, edad, correo, fecha);
 };
 
 //VALIDACIONES
 
-function valRut () {
-    //toda la operación de validación de rut
-}
+function valRut (v) {
+    if (v == null || v.length == 0 || /\D/.test(v)) { //agregar puntos y guiones a la validación
+        alert("Debes ingresar un RUT válido");
+    };
+};
+
+function valNombres (v) {
+    if (v == null || v.length == 0 || / /.test(v)) {
+        
+    }
+};
 
 /* 
 Crear el campo de especialidad con lista desplegable
