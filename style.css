@@ -41,6 +41,12 @@ body{
      color: rgb(255, 255, 255);
   }
 
+  h5 {
+     text-align: left;
+     color: darkslategrey;
+     font-weight: 300;
+  }
+
   #especialidad li { 
      list-style-type: none;
      margin: auto; 

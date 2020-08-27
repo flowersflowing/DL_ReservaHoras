@@ -6,8 +6,25 @@ var apellidos = document.getElementById("apellidos");
 var edad = document.getElementById("edad");
 var correo = document.getElementById("correo");
 var fecha = document.getElementById("fecha");
-var especialidad; //ver especialidad
-var hora; //ver hora
+var especialidad = document.getElementById("especialidad").addEventListener('change', (e) => {
+    return e.target.value;
+});
+var hora = document.getElementById("hora").addEventListener('change', (e) => {
+    return e.target.value;
+});
+
+//Función menú desplegable
+
+// function select (item) {
+//     item.addEventListener('change', (e)=> {
+//         console.log(e.target.value);
+//         var seleccion = e.target.value;
+//     });    
+// };
+
+// select(especialidad);
+// select(hora);
+
 
 //Llamado y función de validación
 
@@ -29,23 +46,10 @@ function validar (e) {
     fecha = fecha.value;
     valFecha(fecha);
 
-    var divDevolucion = document.createElement("div");
+    var divDevolucion = document.createElement('div');
     divDevolucion.innerHTML = `<p>Estimado(a) ${nombres} ${apellidos}, su hora para ${especialidad} ha sido reservada para el día ${fecha} a las ${hora}. Además, se le envió un mensaje a su correo ${correo} con el detalle de su cita.</p><p>Gracias por preferirnos.</p>`;
     document.body.appendChild(divDevolucion);
-    // divDevolucion.style.backgroundColor = white;
 };
-
-//Función menú desplegable
-
-var selectElem = document.getElementById('select');
-var pElem = document.getElementById('p')
-
-// When a new <option> is selected
-selectElem.addEventListener('change', function() {
-  var index = selectElem.selectedIndex;
-  // Add that data to the <p>
-  pElem.innerHTML = 'selectedIndex: ' + index;
-})
 
 //Validaciones
 
@@ -55,7 +59,7 @@ function valRut (v) {
     }
 
     else {
-        alert("Debes ingresar un RUT válido");        
+        alert('Debes ingresar un RUT válido');        
     }
 };
 
@@ -65,7 +69,7 @@ function valNombres (v) {
     }
     
     else {
-        alert("Debes ingresar nombres válido");     
+        alert('Debes ingresar nombres válido');     
     }
 };
 
@@ -75,7 +79,7 @@ function valEdad (v) {
     }
     
     else {
-        alert("Debes ingresar tu edad");     
+        alert('Debes ingresar tu edad');     
     }
 };
 
@@ -85,7 +89,7 @@ function valCorreo (v) {
     }
     
     else {
-        alert("Debes ingresar tu correo con @ y punto, ej. hola@micorreo.ok");     
+        alert('Debes ingresar tu correo con @ y punto, ej. hola@micorreo.ok');     
     }
 };
 
@@ -95,7 +99,7 @@ function valFecha (v) {
     }
     
     else {
-        alert("Debes ingresar una fecha válida");     
+        alert('Debes ingresar una fecha válida');     
     }
 };
 
@@ -113,7 +117,7 @@ TO DO
     - Validar fecha (validar que sean números y en formato dd-mm-aaaa) :)
 - Llamar las funciones dentro de la función de validación :)
 - Entregar mensaje de vuelta :)
-- Darle forma al mensaje de vuelta con un innerHTML 
-- Crear el campo de especialidad con lista desplegable
-- Crear el campo de hora con horas desplegables
+- Crear el campo de especialidad con lista desplegable :)
+- Crear el campo de hora con horas desplegables :)
+- Crear función que me devuelva el valor de hora y especialidad
 */
