@@ -15,7 +15,7 @@
            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" class="inputcss">
            <input type="text" id="edad" name="edad" placeholder="Edad" class="inputcss">
            <input type="text" id="correo" name="correo" placeholder="E-mail" class="inputcss">
-           <div id="especialidad" onmouseover="" onmouseout="">
+           <div id="especialidad" onclick="">
               <ul>
                 <li id="cardiologia"><a href="#">Cardiología</a></li>
                 <li id="dental"><a href="#">Dental</a></li>
@@ -26,7 +26,7 @@
           </div>
            <input type="text" id="fecha" name="fecha" placeholder="Fecha (dd-mm-aaaa, ej. 28-03-1982)" class="inputcss">
            <!-- Agregar lista desplegable de hora de atención -->
-       <input type="button" value="Reservar" class="btn-enviar" onclick="validar();">
+       <input type="submit" value="Reservar" class="btn-enviar" id="reserva">
        </div>
     </form>
 

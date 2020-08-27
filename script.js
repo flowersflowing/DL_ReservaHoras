@@ -1,21 +1,3 @@
-/*
-TO DO
-- Recoger los datos con get Element y almacenarlos en variables :)
-- Hacer una función que valide todos al mismo tiempo :)
-- Hacer las operaciones de cada validación por separado. :)
-    - Validar rut (formato) :)
-    - Validar nombres (sólo letras) :)
-    - Validar apellidos (sólo letras) :)
-    - Validar edad (que sólo tenga números) :)
-    - Validar mail (formato) :)
-    - Validar fecha (validar que sean números y en formato dd-mm-aaaa) :)
-- Llamar las funciones dentro de la función de validación :)
-- Entregar mensaje de vuelta :)
-- Darle forma al mensaje de vuelta con un innerHTML
-- Crear el campo de especialidad con lista desplegable
-- Crear el campo de hora con horas desplegables
-*/
-
 //Almacenar los valores en variables
 
 var rut = document.getElementById("rut");
@@ -27,9 +9,13 @@ var fecha = document.getElementById("fecha");
 var especialidad; //ver especialidad
 var hora; //ver hora
 
-//Función de validación
+//Llamado y función de validación
 
-function validar () {
+document.getElementById('reserva').addEventListener('click', validar);
+
+function validar (e) {
+    e.preventDefault();
+
     rut = rut.value;
     valRut(rut);
     nombres = nombres.value;
@@ -43,7 +29,10 @@ function validar () {
     fecha = fecha.value;
     valFecha(fecha);
 
-    document.write("<div><p>Estimado(a) " + nombres + " " + apellidos + ", su hora para " + especialidad + " ha sido reservada para el día " + fecha + " a las " + hora + ". Además, se le envió un mensaje a su correo " + correo + " con el detalle de su cita.</p>" + "<p>Gracias por preferirnos.</p></div>")
+    var divDevolucion = document.createElement("div");
+    divDevolucion.innerHTML = `<p>Estimado(a) ${nombres} ${apellidos}, su hora para ${especialidad} ha sido reservada para el día ${fecha} a las ${hora}. Además, se le envió un mensaje a su correo ${correo} con el detalle de su cita.</p><p>Gracias por preferirnos.</p>`;
+    document.body.appendChild(divDevolucion);
+    // divDevolucion.style.backgroundColor = white;
 };
 
 //Validaciones
@@ -97,3 +86,22 @@ function valFecha (v) {
         alert("Debes ingresar una fecha válida");     
     }
 };
+
+
+/*
+TO DO
+- Recoger los datos con get Element y almacenarlos en variables :)
+- Hacer una función que valide todos al mismo tiempo :)
+- Hacer las operaciones de cada validación por separado. :)
+    - Validar rut (formato) :)
+    - Validar nombres (sólo letras) :)
+    - Validar apellidos (sólo letras) :)
+    - Validar edad (que sólo tenga números) :)
+    - Validar mail (formato) :)
+    - Validar fecha (validar que sean números y en formato dd-mm-aaaa) :)
+- Llamar las funciones dentro de la función de validación :)
+- Entregar mensaje de vuelta :)
+- Darle forma al mensaje de vuelta con un innerHTML 
+- Crear el campo de especialidad con lista desplegable
+- Crear el campo de hora con horas desplegables
+*/
